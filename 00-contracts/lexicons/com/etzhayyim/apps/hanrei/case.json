@@ -1,0 +1,25 @@
+{
+  "lexicon": 1,
+  "id": "com.etzhayyim.apps.hanrei.case",
+  "description": "Judgement/Case record in hanrei corpus",
+  "defs": {
+    "main": {
+      "type": "record",
+      "description": "A case in the corpus",
+      "record": {
+        "key": "tid",
+        "fields": [
+          {"name": "caseId", "type": "string", "description": "Unique case identifier"},
+          {"name": "title", "type": "string", "description": "Case name"},
+          {"name": "decidedAt", "type": "string", "format": "date", "description": "Decision date"},
+          {"name": "summary", "type": "string", "description": "Holding/summary"},
+          {"name": "courtDid", "type": "string", "description": "DID of court (ooyake reference)"},
+          {"name": "statuteRefs", "type": {"type": "array", "items": "string"}, "description": "DIDs of referenced statutes (houbun)"},
+          {"name": "source", "type": "string", "enum": ["jpn-supremecourt", "jpn-lowercourt", "google-scholar", "curia", "icj"], "description": "Data source"},
+          {"name": "sourceUrl", "type": "string", "description": "Original source URL"},
+          {"name": "lastVerified", "type": "string", "format": "date-time"}
+        ]
+      }
+    }
+  }
+}

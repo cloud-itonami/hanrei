@@ -1,0 +1,21 @@
+{
+  "lexicon": 1,
+  "id": "com.etzhayyim.apps.hanrei.precedentLink",
+  "description": "Precedent relationship between cases",
+  "defs": {
+    "main": {
+      "type": "record",
+      "record": {
+        "key": "tid",
+        "fields": [
+          {"name": "precedentType", "type": "string", "enum": ["cites", "distinguishes", "overrules", "affirms"], "description": "Relationship type"},
+          {"name": "sourceCaseId", "type": "string", "description": "ID of citing case"},
+          {"name": "targetCaseId", "type": "string", "description": "ID of cited case"},
+          {"name": "confidence", "type": ["null", "double"], "description": "Confidence score (0.0-1.0) for automated link detection"},
+          {"name": "citationContext", "type": ["null", "string"], "description": "Text snippet showing citation context"},
+          {"name": "source", "type": "string", "description": "Data source"}
+        ]
+      }
+    }
+  }
+}

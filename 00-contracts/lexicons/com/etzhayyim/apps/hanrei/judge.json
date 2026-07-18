@@ -1,0 +1,22 @@
+{
+  "lexicon": 1,
+  "id": "com.etzhayyim.apps.hanrei.judge",
+  "description": "Judge activity record (public role name only, no PII)",
+  "defs": {
+    "main": {
+      "type": "record",
+      "record": {
+        "key": "tid",
+        "fields": [
+          {"name": "judgeName", "type": "string", "description": "Official public name"},
+          {"name": "courtDid", "type": "string", "description": "Court affiliation (ooyake)"},
+          {"name": "appointedAt", "type": "string", "format": "date"},
+          {"name": "retiredAt", "type": ["null", "string"], "format": "date"},
+          {"name": "decisionCount", "type": "long", "description": "Total decisions (descriptive)"},
+          {"name": "reversalRate", "type": ["null", "double"], "description": "Reversal rate % (trend analysis only)"},
+          {"name": "source", "type": "string"}
+        ]
+      }
+    }
+  }
+}
