@@ -2,7 +2,7 @@
   "Pilot ingest pipeline for Japan Supreme Court decisions.
    Phase 1: fetch 1K recent decisions from JP SC API.
    Extracts statute references and opinion metadata for Datomic transact."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             #?(:clj [clj-http.client :as http])
             #?(:clj [org.jsoup :as jsoup]))
   #?(:cljs (:require-macros [hanrei.ingest])))
