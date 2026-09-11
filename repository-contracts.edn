@@ -7,4 +7,4 @@
  :canonical-data-format :edn
  :dependencies [{:capability :cap/kqe :kind :host-import}]
  :external-wire-formats #{:atproto-json :did-json :json-ld}
- :tests {:command ["bb" "run_tests.clj"]}}
+ :tests {:command ["bb" "run_tests.cljk"]}}
