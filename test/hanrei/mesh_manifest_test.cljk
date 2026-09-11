@@ -12,7 +12,7 @@
         schema (read-edn "schema.edn")]
     (testing "the independent repository owns its mesh source"
       (is (= "hanrei" (:kotoba.app/name manifest)))
-      (is (= "methods/mesh.clj" (:src component)))
+      (is (= "methods/mesh.cljk" (:src component)))
       (is (.isFile (io/file (:src component)))))
     (testing "KQE is an explicit capability dependency"
       (is (= #{:cap/kqe} (:requires component)))
@@ -29,7 +29,7 @@
              (set (map :db/ident schema)))))))
 
 (deftest mesh-keeps-the-observatory-boundary
-  (let [source (slurp (io/file "methods/mesh.clj"))]
+  (let [source (slurp (io/file "methods/mesh.cljk"))]
     (is (re-find #"kqe-assert!" source))
     (is (re-find #"kqe-query" source))
     (is (re-find #"defn on-kse" source))))
