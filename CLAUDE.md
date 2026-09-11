@@ -171,5 +171,5 @@ etzhayyim deploy                     # TS native mode
 - `kotoba.app.edn` is the canonical deployment manifest. Component and placement values remain
   structured EDN; do not encode nested EDN as strings.
 - `schema.edn` and every path referenced by the deployment manifest are owned by this repository.
-- `bb run_tests.cljk` must pass from a standalone checkout. Do not restore `20-actors` or
+- `kbb run_tests.cljk` must pass from a standalone checkout. Do not restore `20-actors` or
   superproject-relative classpath assumptions.
