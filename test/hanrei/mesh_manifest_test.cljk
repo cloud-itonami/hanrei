@@ -1,6 +1,6 @@
 (ns hanrei.mesh-manifest-test
   (:require [kotoba.lang.edn :as edn]
-            [clojure.java.io :as io]
+            [kotoba.io :as io]
             [kotoba.test :refer [deftest is testing]]))
 
 (defn- read-edn [path]
@@ -13,7 +13,7 @@
     (testing "the independent repository owns its mesh source"
       (is (= "hanrei" (:kotoba.app/name manifest)))
       (is (= "methods/mesh.cljk" (:src component)))
-      (is (.isFile (io/file (:src component)))))
+      (is (io/file? (io/file (:src component)))))
     (testing "KQE is an explicit capability dependency"
       (is (= #{:cap/kqe} (:requires component)))
       (is (= [{:type :kse :topic "etzhayyim/actor/hanrei"}]
