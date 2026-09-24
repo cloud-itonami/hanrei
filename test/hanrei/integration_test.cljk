@@ -1,7 +1,7 @@
 (ns hanrei.integration-test
   "Integration tests for Phase 1 ingest pipeline.
    Tests: API fetch, statute extraction, entity building."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [hanrei.ingest :as ingest]
             [hanrei.pilot :as pilot]))
 
