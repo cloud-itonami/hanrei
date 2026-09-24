@@ -1,7 +1,7 @@
 (ns hanrei.repository-contract-test
   (:require [cheshire.core :as json]
             [kotoba.lang.edn :as edn]
-            [clojure.java.io :as io]
+            [kotoba.io :as io]
             [kotoba.test :refer [deftest is]]))
 (defn- read-edn [path] (edn/read-string (slurp path)))
 (deftest canonical-metadata-contract
@@ -11,7 +11,7 @@
     (is (= "manifest.edn" (:canonical-actor-metadata contracts)))
     (is (= "identity.edn" (:canonical-identity-metadata contracts)))
     (is (= (:actor/did manifest) (:identity/did identity)))
-    (is (not (.exists (io/file "actor-manifest.jsonld"))))))
+    (is (not (io/exists? (io/file "actor-manifest.jsonld"))))))
 (deftest did-json-is-an-external-wire-artifact
   (let [identity (read-edn "identity.edn")
         wire (json/parse-string (slurp ".well-known/did.json"))]
