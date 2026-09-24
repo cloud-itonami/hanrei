@@ -1,7 +1,7 @@
 (ns hanrei.mesh-manifest-test
   (:require [clojure.edn :as edn]
             [clojure.java.io :as io]
-            [clojure.test :refer [deftest is testing]]))
+            [kotoba.test :refer [deftest is testing]]))
 
 (defn- read-edn [path]
   (edn/read-string (slurp (io/file path))))
